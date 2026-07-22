@@ -1,0 +1,33 @@
+# Environment variables - keep secrets out of version control
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp3
+*.wav
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+.env
