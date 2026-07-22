@@ -1,119 +1,455 @@
-# Smart Talk - AI Virtual Voice Assistant
+# 🤖 BUJJI AI – Modern Desktop Assistant
 
-A cross-platform Python desktop application for voice commands and AI assistance.
+<div align="center">
 
-## Setup
+<img src="assets/bujji.gif" alt="BUJJI AI" width="180"/>
 
-1. Copy `.env.example` to `.env` and fill in your API keys:
-   ```bash
-   cp .env.example .env
-   ```
+### Your Intelligent AI Desktop Companion
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+**BUJJI AI** is a modern cross-platform desktop assistant built with **Python**, **CustomTkinter**, and **Google Gemini AI**. It combines conversational AI, voice interaction, system automation, productivity tools, document intelligence, and developer utilities into a single elegant desktop application.
 
-3. Run the application:
-   ```bash
-   python main.py
-   ```
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![CustomTkinter](https://img.shields.io/badge/CustomTkinter-Modern_UI-blue?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/Google-Gemini_AI-4285F4?style=for-the-badge&logo=google)
+![Platform](https://img.shields.io/badge/Platform-Windows-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Environment Variables
+---
 
-The following environment variables are required for full functionality:
+*A modern AI desktop assistant inspired by ChatGPT, Microsoft Copilot, Siri and Google Assistant.*
 
-| Variable | Description |
-|----------|-------------|
-| `HF_TOKEN` | Hugging Face API token (for AI features) |
-| `WEATHER_API_KEY` | OpenWeatherMap API key (for weather commands) |
-| `GOOGLE_API_KEY` | Google Generative AI API key (for AI chat features) |
+</div>
 
-## Asset Management
+---
 
-This application uses a centralized asset management system (`assets.py`) for portable file paths.
+# ✨ Features
 
-### Changes Made
+## 🤖 AI Assistant
 
-All hardcoded absolute file paths have been replaced with a portable solution:
+- Google Gemini AI integration
+- Context-aware conversations
+- Persistent chat history
+- SQLite-powered memory
+- Multiple AI personality modes
+- Prompt templates
+- Code generation
+- Bug fixing assistance
+- Explanation mode
 
-- **Before**: `C:\Users\N.SIRISHA\OneDrive\Pictures\Documents\bujji.jpg`
-- **After**: Uses `assets.get_gif_path("bujji.gif")` to find assets relative to project root
+---
 
-### How It Works
+## 🎤 Voice Assistant
 
-1. **Asset Loading**: All assets are loaded from the project root directory (`AI-virtual-voice-assistant/`)
-2. **Fallback Support**: If an asset is missing, a warning is shown and a placeholder is displayed
-3. **Cross-Platform**: Uses `pathlib.Path` for compatibility with Windows, Linux, and macOS
-4. **Output Files**: Screenshots and camera pictures are saved to the project root directory
+- Voice command recognition
+- Text command mode
+- Wake word support
+- Speech-to-Text
+- Text-to-Speech
+- Live voice waveform visualization
+- Continuous listening mode
 
-### Required Assets
+---
 
-Place the following files in the project root or `assets/` subdirectory:
-- `bujji.gif` - Animated GIF for the assistant display
+## 💬 Modern Chat Interface
 
-## Security Improvements
+- ChatGPT-inspired interface
+- User & AI chat bubbles
+- Typing animation
+- Code block rendering
+- Copy responses
+- Conversation timestamps
+- Sidebar navigation
 
-All hardcoded API keys and tokens have been removed from the source code:
+---
 
-- **Before**: Hardcoded tokens in `main.py` and `features.py`
-- **After**: Tokens loaded from environment variables via `os.environ.get()`
+## 📊 System Dashboard
 
-### Files Changed for Security
+Monitor your system in real time.
 
-| File | Change |
-|------|--------|
-| `main.py` | Removed `WEATHER_API_KEY` and `HF_TOKEN`, now uses `os.environ.get()` |
-| `features.py` | Removed `GOOGLE_API_KEY`, now uses `os.environ.get()` |
-| `.env.example` | Added template for environment variables |
-| `.gitignore` | Added `.env` to prevent accidental commits |
+- CPU Usage
+- RAM Usage
+- Disk Usage
+- Battery Status
+- Running Processes
+- Application Launcher
 
-## Git Commands to Remove Secrets from History
+Launch
 
-If secrets exist in previous Git commits, run these commands to remove them:
+- VS Code
+- Chrome
+- Notepad
+- Calculator
+- File Explorer
+- Command Prompt
+
+---
+
+## 🌤 Weather Dashboard
+
+- Live weather lookup
+- Temperature
+- Humidity
+- Wind Speed
+- Global city search
+
+---
+
+## 📰 News Dashboard
+
+Latest news categories
+
+- Technology
+- Artificial Intelligence
+- India
+- World News
+
+Powered using Google News RSS.
+
+---
+
+## 📁 Document AI
+
+- PDF Text Extraction
+- AI Summarization
+- Document Question Answering
+- File Browser
+
+---
+
+## ⚡ Productivity Suite
+
+- Pomodoro Timer
+- Todo List
+- Reminder Manager
+- QR Code Generator
+- Strong Password Generator
+
+---
+
+## 👨‍💻 Developer Hub
+
+Built especially for developers.
+
+- Python Prompt Templates
+- SQL Generator
+- HTML/CSS Generator
+- Docker Commands
+- Git Commands
+- Linux Commands
+- Debug Assistant
+
+---
+
+## 🎮 Entertainment
+
+- AI Story Generator
+- Jokes
+- Mini Games
+
+---
+
+# 🎨 Modern User Interface
+
+BUJJI AI features a modern desktop UI designed with **CustomTkinter**.
+
+### Design Highlights
+
+- Dark Theme
+- Glassmorphism Inspired Layout
+- Responsive Sidebar
+- ChatGPT Style Chat Window
+- Animated Voice Wave
+- Purple & Cyan Accent Theme
+- Smooth Navigation
+
+---
+
+# 🏗 Architecture
+
+```
+User
+   │
+   ▼
+CustomTkinter UI
+   │
+   ▼
+Application Controller
+   │
+   ├─────────────── AI Engine
+   │                  │
+   │                  ▼
+   │            Google Gemini API
+   │
+   ├────────────── Voice Engine
+   │                  │
+   │          Speech Recognition
+   │
+   ├────────────── Database
+   │                  │
+   │               SQLite
+   │
+   ├────────────── System Automation
+   │
+   └────────────── Productivity Modules
+```
+
+---
+
+# 📂 Project Structure
+
+```
+AI_virtual_voice_assistant/
+
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── .env.example
+│
+├── bujji/
+│
+├── ui/
+│   ├── sidebar.py
+│   ├── landing_page.py
+│   ├── chat_page.py
+│   ├── voice_page.py
+│   ├── weather_page.py
+│   ├── news_page.py
+│   ├── reminders_page.py
+│   ├── productivity_page.py
+│   ├── developer_page.py
+│   ├── settings_page.py
+│   └── system_monitor.py
+│
+├── ai/
+├── voice/
+├── automation/
+├── productivity/
+├── data/
+│
+├── assets/
+│   └── bujji.gif
+│
+└── bujji.db
+```
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
 
 ```bash
-# Remove secrets from all commits (use with caution!)
-git filter-branch --force --index-filter \
-  'git rm --cached --ignore-unmatch .env' \
-  --prune-empty --tag-name-filter cat -- --all
+git clone https://github.com/gautami1407/AI_virtual_voice_assistant.git
 
-# Or use the modern BFG Repo-Cleaner tool:
-# java -jar bfg.jar --replace-text secrets.txt
-
-# Force push (will overwrite remote history - coordinate with team!)
-git push origin --force --all
-git push origin --force --tags
+cd AI_virtual_voice_assistant
 ```
 
-## File Structure
+---
 
-```
-AI-virtual-voice-assistant/
-├── main.py           # Main application entry point
-├── features.py       # Voice assistant features
-├── functions.py      # Core functions (speech recognition, TTS)
-├── gui.py            # GUI components
-├── assets.py         # Asset path management
-├── game_hub.py       # Mini games
-├── bujji.gif          # Assistant animation
-├── .env.example      # Environment variable template
-├── .gitignore        # Git ignore rules
-└── README.md         # This file
+## Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+
+venv\Scripts\activate
 ```
 
-## Requirements
+### Linux / macOS
 
-- Python 3.7+
-- tkinter
-- PIL/Pillow
-- opencv-python
-- pyautogui
-- psutil
-- speechrecognition
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file from `.env.example`.
+
+```env
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+
+WEATHER_API_KEY=YOUR_OPENWEATHER_API_KEY
+
+HF_TOKEN=YOUR_HUGGINGFACE_TOKEN
+```
+
+---
+
+## Run BUJJI
+
+```bash
+python main.py
+```
+
+or
+
+```bash
+python -m bujji
+```
+
+---
+
+# 🔐 Security
+
+BUJJI follows secure development practices.
+
+- Environment Variables
+- No Hardcoded API Keys
+- Git Ignore Protection
+- Portable Asset Loading
+- Cross-platform File Management
+
+---
+
+# 📦 Technologies Used
+
+### Languages
+
+- Python
+
+### Desktop UI
+
+- CustomTkinter
+- Tkinter
+
+### Artificial Intelligence
+
+- Google Gemini API
+
+### Voice Processing
+
+- SpeechRecognition
 - pyttsx3
-- google-generativeai
-- requests
-- wikipedia
-- beautifulsoup4
-- spotipy
+
+### Computer Vision
+
+- OpenCV
+
+### Automation
+
+- PyAutoGUI
+- psutil
+
+### Database
+
+- SQLite
+
+### APIs
+
+- Google Gemini
+- OpenWeatherMap
+- Google News RSS
+- Wikipedia
+
+### Python Libraries
+
+- Pillow
+- Requests
+- BeautifulSoup
+- PyJokes
+- Pathlib
+
+---
+
+# 📌 Current Modules
+
+- ✅ AI Chat
+- ✅ Voice Assistant
+- ✅ Wake Word
+- ✅ Chat History
+- ✅ Weather Dashboard
+- ✅ News Dashboard
+- ✅ System Monitor
+- ✅ Productivity Tools
+- ✅ Reminder Manager
+- ✅ PDF AI
+- ✅ QR Generator
+- ✅ Password Generator
+- ✅ Developer Assistant
+- ✅ Mini Games
+- ✅ Application Launcher
+
+---
+
+# 🚀 Future Roadmap
+
+- Mobile Companion App
+- Offline AI Models
+- Plugin Marketplace
+- Multi-language Support
+- Face Recognition Login
+- Smart Home Integration
+- Voice Authentication
+- Cloud Sync
+- OCR Image Understanding
+- Screen Understanding
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+Fork the repository
+
+↓
+
+Create a new branch
+
+↓
+
+Implement your feature
+
+↓
+
+Commit changes
+
+↓
+
+Push your branch
+
+↓
+
+Open a Pull Request
+```
+
+---
+
+# 📜 License
+
+Licensed under the **MIT License**.
+
+---
+
+# 👩‍💻 Developer
+
+## Nuchu Gouthami
+
+**AI Developer | Python Developer | Cloud Computing Enthusiast | Open Source Contributor**
+
+- 🌐 GitHub: https://github.com/gautami1407
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project helpful, consider giving it a Star!
+
+**Made with ❤️ using Python & AI**
+
+</div>
